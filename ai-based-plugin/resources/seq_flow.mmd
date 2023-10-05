@@ -1,0 +1,19 @@
+
+    sequenceDiagram
+        participant M as Main
+        participant A as AIModel
+        participant D as DataCollector
+        participant B as DBConnector
+        participant G as GrammarChecker
+        participant I as API
+        M->>A: train(data)
+        M->>D: collect_data()
+        M->>B: connect(db_name)
+        M->>G: check(text)
+        M->>I: start()
+        A-->>M: model
+        D-->>M: data
+        B-->>M: connection
+        G-->>M: checked_text
+        I-->>M: API running
+    

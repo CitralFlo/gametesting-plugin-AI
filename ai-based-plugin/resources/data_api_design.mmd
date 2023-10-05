@@ -1,0 +1,36 @@
+
+    classDiagram
+        class Main{
+            +def __init__(self)
+            +def run(self)
+        }
+        class AIModel{
+            +def __init__(self)
+            +def train(self, data: DataFrame)
+            +def predict(self, description: str): str
+        }
+        class DataCollector{
+            +def __init__(self)
+            +def collect_data(self): DataFrame
+            +def compare_data(self, current_data: DataFrame, past_data: DataFrame): DataFrame
+        }
+        class DBConnector{
+            +def __init__(self)
+            +def connect(self, db_name: str)
+            +def get_data(self, table_name: str): DataFrame
+            +def update_data(self, table_name: str, data: DataFrame)
+        }
+        class GrammarChecker{
+            +def __init__(self)
+            +def check(self, text: str): str
+        }
+        class API{
+            +def __init__(self)
+            +def start(self)
+        }
+        Main -- AIModel: uses
+        Main -- DataCollector: uses
+        Main -- DBConnector: uses
+        Main -- GrammarChecker: uses
+        Main -- API: uses
+    
